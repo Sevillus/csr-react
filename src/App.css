@@ -1,38 +1,38 @@
-.App {
-  text-align: center;
+/* Celowe użycie importu, który spowalnia FCP i renderowanie */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  /* Celowo duże tło, które spowalnia ładowanie */
+  background-image: url('https://picsum.photos/1920/1080?random=1');
+  background-size: cover;
+  background-attachment: fixed;
+  /* Dodatkowe, niepotrzebne style, które obciążają przeglądarkę */
+  -webkit-filter: blur(0);
+  filter: blur(0);
+  transition: all 0.5s ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.jumbotron {
+  margin-top: 56px; /* Odpowiada wysokości navbara */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,.1);
+  margin-bottom: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,.2);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-img-top {
+  /* Celowe nieustawianie stałej wysokości dla obrazów, co powoduje CLS */
+  width: 100%;
+  /* Celowo duża jakość zdjęć, które spowalniają ładowanie */
 }

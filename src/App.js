@@ -11,7 +11,7 @@ const useHeavyLoader = () => {
   useEffect(() => {
     const loadData = async () => {
       // Symulacja długiego opóźnienia sieci, które spowolni TTI i TBT
-      await new Promise(resolve => setTimeout(resolve, 3000));
+      await new Promise(resolve => setTimeout(resolve, 500));
 
       // Celowe dodanie dużego, blokującego zadania
       let heavyLoopResult = 0;
